@@ -8,6 +8,26 @@
 -- Data Source: Azure Blob Storage (dwhproject/datasets/source_crm/cust_info.csv)
 -- ===============================================================
 
+-- ===============================================================
+-- HOW TO GENERATE SAS TOKEN (Shared Access Signature)
+-- ===============================================================
+-- 1. Go to Azure Portal (portal.azure.com)
+-- 2. Navigate to Storage accounts → [your-storage-account-name]
+-- 3. In the left menu, go to Security + networking → Shared access signature
+-- 4. Configure the following settings:
+--    ✅ Allowed services: Blob (uncheck Table, Queue, File)
+--    ✅ Allowed resource types: Container ✅ + Object ✅
+--    ✅ Allowed permissions: Read ✅ + List ✅ (minimum required)
+--    📅 Start time: Current date/time (or leave default)
+--    📅 Expiry time: Set future date (e.g., 1 year from now)
+--    🔒 Allowed protocols: HTTPS only (recommended)
+--    🔑 Signing key: key1 (default)
+-- 5. Click "Generate SAS and connection string" button
+-- 6. Copy the "SAS token" value (starts with ?sv=...)
+-- 7. IMPORTANT: Remove the leading "?" when using in SQL credential
+--    Example: If token is "?sv=2024...", use "sv=2024..." in SECRET
+-- ===============================================================
+
 -- STEP 1: Clean up existing database scoped credential
 -- Remove any existing SAS token credential to avoid conflicts
 IF EXISTS (SELECT * FROM sys.database_scoped_credentials WHERE name = 'SASTokenCredential')

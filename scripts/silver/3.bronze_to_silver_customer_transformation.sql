@@ -5,7 +5,7 @@
 -- Source: bronze.crm_cust_info
 -- Target: silver.crm_cust_info
 -- Transformations: Remove spaces, standardize categorical values, deduplicate
--- Author: [Your Name]
+-- Author: Hung Nguyen
 -- Date: July 24, 2025
 -- ===============================================================
 

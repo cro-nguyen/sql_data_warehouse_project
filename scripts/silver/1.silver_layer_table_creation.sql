@@ -40,13 +40,14 @@ CREATE TABLE silver.crm_cust_info (
 IF OBJECT_ID('silver.crm_prd_info', 'U') IS NOT NULL
     DROP TABLE silver.crm_prd_info;
 CREATE TABLE silver.crm_prd_info (
-    prd_id INT,                        -- Product ID
+    prd_id INT,                       -- Product ID
+    cat_id NVARCHAR(50),              -- Category ID
     prd_key NVARCHAR(50),             -- Product business key
     prd_nm NVARCHAR(50),              -- Product name (cleaned)
     prd_code INT,                     -- Product code
     prd_line NVARCHAR(50),            -- Product line (standardized)
-    prd_start_dt DATETIME,            -- Launch date
-    prd_end_dt DATETIME,              -- End date
+    prd_start_dt DATE,                -- Launch date
+    prd_end_dt DATE,                  -- End date
     dwh_create_date DATETIME2 DEFAULT GETDATE()  -- Data warehouse load timestamp
 );
 

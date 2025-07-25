@@ -3,7 +3,7 @@
 -- ===============================================================
 -- Purpose: Validate data quality in silver.crm_cust_info after transformation
 -- Checks: Sample data, duplicates, nulls, spaces, standardization results
--- Author: [Your Name]
+-- Author: Hung Nguyen
 -- Date: July 24, 2025
 -- ===============================================================
 

@@ -16,6 +16,7 @@
 -- 4. Deduplicate by keeping latest record per customer (ROW_NUMBER with cst_create_date DESC)
 -- 5. Filter out records with NULL customer IDs
 
+TRUNCATE TABLE silver.crm_cust_info;   -- Remove all existing records from silver table for clean reload
 INSERT INTO silver.crm_cust_info (cst_id, cst_key, cst_firstname, cst_lastname, cst_material_status, cst_gndr, cst_create_date)
 SELECT
    cst_id,

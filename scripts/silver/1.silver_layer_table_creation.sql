@@ -60,12 +60,12 @@ CREATE TABLE silver.crm_sales_details (
     sls_ord_num NVARCHAR(50),         -- Order number
     sls_prd_key NVARCHAR(50),         -- Product key
     sls_cust_id INT,                  -- Customer ID
-    sls_order_dt INT,                 -- Order date (integer - needs conversion)
-    sls_ship_dt INT,                  -- Ship date (integer - needs conversion)
-    sls_due_dt INT,                   -- Due date (integer - needs conversion)
-    sls_sales INT,                    -- Sales amount (integer - needs conversion)
+    sls_order_dt DATE,                -- Order date
+    sls_ship_dt DATE,                 -- Ship date
+    sls_due_dt DATE,                  -- Due date
+    sls_sales INT,                    -- Sales amount
     sls_quantity INT,                 -- Quantity
-    sls_price INT,                    -- Unit price (integer - needs conversion)
+    sls_price INT,                    -- Unit price
     dwh_create_date DATETIME2 DEFAULT GETDATE()  -- Data warehouse load timestamp
 );
 

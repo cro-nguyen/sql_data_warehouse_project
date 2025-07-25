@@ -15,6 +15,8 @@
 -- 3. Handle negative prices by taking absolute value
 -- 4. Calculate missing prices by dividing sales by quantity (avoid division by zero)
 -- 5. Maintain data integrity while fixing common data quality issues
+
+TRUNCATE TABLE silver.crm_sales_details;   -- Remove all existing records from silver table for clean reload
 INSERT INTO silver.crm_sales_details (
    sls_ord_num,
    sls_prd_key,

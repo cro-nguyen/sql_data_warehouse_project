@@ -14,6 +14,8 @@
 -- 2. Standardize country codes (DE→Germany, US/USA→United State)
 -- 3. Handle empty/NULL country values by setting to 'n/a'
 -- 4. Trim whitespace from country names for data consistency
+
+TRUNCATE TABLE silver.erp_loc_a101;   -- Remove all existing records from silver table for clean reload
 INSERT INTO silver.erp_loc_a101(cid, cntry)
 SELECT
    REPLACE(cid, '-', '') cid,

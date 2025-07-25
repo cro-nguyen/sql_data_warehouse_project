@@ -16,6 +16,8 @@
 -- 4. Standardize product line codes (M→Mountain, R→Road, S→Other Sales, T→Touring)
 -- 5. Cast start date to proper DATE format
 -- 6. Calculate end date using LEAD() function (next product start date - 1 day)
+
+TRUNCATE TABLE silver.crm_prd_info;   -- Remove all existing records from silver table for clean reload
 INSERT INTO silver.crm_prd_info(prd_id, cat_id, prd_key, prd_nm, prd_cost, prd_line, prd_start_dt, prd_end_dt)
 SELECT
    prd_id,

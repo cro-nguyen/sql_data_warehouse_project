@@ -4,7 +4,7 @@
 -- Purpose: Create silver layer tables for cleaned and validated data
 -- Layer: Silver (Cleaned data with data warehouse metadata)
 -- Source: Bronze layer tables (raw data)
--- Author: [Your Name]
+-- Author: Hung Nguyen
 -- Date: July 24, 2025
 -- ===============================================================
 

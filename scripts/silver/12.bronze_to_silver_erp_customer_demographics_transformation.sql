@@ -14,6 +14,8 @@
 -- 2. Validate birth dates - set future dates to NULL (data quality rule)
 -- 3. Standardize gender values (F/Female→Female, M/Male→Male, other→n/a)
 -- 4. Maintain referential integrity with CRM customer data
+
+TRUNCATE TABLE silver.erp_cust_az12;   -- Remove all existing records from silver table for clean reload
 INSERT INTO silver.erp_cust_az12(cid, bdate, gen)
 SELECT
    CASE WHEN cid LIKE 'NAS%' THEN SUBSTRING(cid, 4, LEN(cid))

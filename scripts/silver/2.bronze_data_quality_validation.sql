@@ -3,7 +3,7 @@
 -- ===============================================================
 -- Purpose: Validate data quality in bronze.crm_cust_info before silver transformation
 -- Checks: Sample data, duplicates, nulls, spaces, standardization
--- Author: [Your Name]
+-- Author: Hung Nguyen
 -- Date: July 24, 2025
 -- ===============================================================
 
